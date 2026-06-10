@@ -1,0 +1,35 @@
+CompileFlags:
+  Compiler: C:/msys64/ucrt64/bin/g++.exe
+  Add:
+    - --std=c++26
+    - --target=x86_64-w64-windows-gnu
+
+    - -pedantic-errors
+    - -pedantic
+    - -Wall
+    - -Wextra
+    - -Wno-unused-parameter
+    - -Wno-deprecated-declarations
+    - -fstack-protector-strong
+    - -fstack-clash-protection
+    - -Wredundant-decls
+    - -Wmissing-include-dirs
+    - -Wconversion
+    - -Wundef
+    - -Wno-format-nonliteral
+    - -Wpointer-arith
+    - -Wcast-align
+    - -Wold-style-cast
+    - -Wwrite-strings
+    - -Wformat=2
+    - -Woverloaded-virtual
+    - -Wcast-qual
+
+Diagnostics:
+  ClangTidy:
+    Add: [bugprone-*, performance-*]
+    Remove: [bugprone-easily-swappable-parameters]
+    CheckOptions:
+      readability-identifier-naming.VariableCase: camelCase
+
+
